@@ -2,6 +2,7 @@
   margin: 0 auto;
   box-sizing: border-box;
   max-width: 1440px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;

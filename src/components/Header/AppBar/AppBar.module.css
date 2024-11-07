@@ -1,0 +1,12 @@
+.header {
+  width: 100vw;
+  background-color: var(--secondary-white-color);
+}
+
+.wrapper {
+  display: none;
+}
+
+.greenBackground {
+  background-color: var(--primary-green-color);
+}
