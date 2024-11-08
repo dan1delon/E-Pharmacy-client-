@@ -3,9 +3,14 @@ import Icon from '../../../shared/Icon/Icon';
 import Logo from '../Logo/Logo';
 import css from './MobileMenu.module.css';
 import NavigationMenu from '../NavigationMenu/NavigationMenu';
+import { NavLink, useLocation } from 'react-router-dom';
+import clsx from 'clsx';
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const isHomePage = location.pathname === '/home';
 
   const toggleMenu = () => {
     setIsOpen(prevState => !prevState);
@@ -21,7 +26,10 @@ const MobileMenu = () => {
       <div className={css.wrapper}>
         <Logo />
         <button type="button" className={css.button} onClick={toggleMenu}>
-          <Icon iconId="icon-burger-menu" className={css.iconMenu} />
+          <Icon
+            iconId="icon-burger-menu"
+            className={clsx(css.iconMenu, { [css.iconMenuBlack]: !isHomePage })}
+          />
         </button>
 
         {isOpen && (
@@ -30,14 +38,23 @@ const MobileMenu = () => {
               <Icon iconId="icon-x" className={css.iconClose} />
             </button>
             <span />
-            <NavigationMenu />
-            <button
-              type="button"
-              className={css.buttonLogout}
-              onClick={handleLogout}
-            >
-              Log out
-            </button>
+            <NavigationMenu toggleMenu={toggleMenu} />
+            <div className={css.btnWrapper}>
+              <NavLink
+                to="/register"
+                className={css.btnRegister}
+                onClick={toggleMenu}
+              >
+                Register
+              </NavLink>
+              <NavLink
+                to="/login"
+                className={css.btnLogin}
+                onClick={toggleMenu}
+              >
+                Log in
+              </NavLink>
+            </div>
           </div>
         )}
       </div>

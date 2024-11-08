@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import Icon from '../../../shared/Icon/Icon';
 import css from './Logo.module.css';
+import clsx from 'clsx';
 
 const Logo = () => {
   const location = useLocation();
@@ -12,7 +13,9 @@ const Logo = () => {
         iconId={isHomePage ? 'icon-logo-white' : 'icon-logo'}
         className={css.iconLogo}
       />
-      <p className={css.logoText}>E-Pharmacy</p>
+      <p className={clsx(css.logoText, { [css.logoTextBlack]: !isHomePage })}>
+        E-Pharmacy
+      </p>
     </NavLink>
   );
 };

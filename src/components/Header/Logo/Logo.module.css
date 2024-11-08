@@ -30,3 +30,7 @@
     line-height: 24px;
   }
 }
+
+.logoTextBlack {
+  color: var(--primary-black-color);
+}
