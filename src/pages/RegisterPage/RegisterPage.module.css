@@ -12,7 +12,7 @@
   @media screen and (min-width: 768px) {
     max-width: 704px;
     align-items: flex-start;
-    gap: 54px;
+    gap: 62px;
   }
 
   @media screen and (min-width: 1440px) {
