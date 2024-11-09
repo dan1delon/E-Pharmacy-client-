@@ -1,6 +1,7 @@
 .header {
   width: 100vw;
   background-color: var(--primary-light-gray-color);
+  border: none;
 }
 
 .wrapper {
