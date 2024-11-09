@@ -18,6 +18,11 @@
   line-height: 100%;
   letter-spacing: 0%;
   text-align: left;
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+
+.btnRegister:hover {
+  border-color: rgba(247, 248, 250, 1);
 }
 
 .btnLogin {
@@ -33,4 +38,8 @@
 .greenColor {
   color: var(--primary-green-color);
   border-color: rgba(89, 177, 122, 0.5);
+}
+
+.greenColor:hover {
+  border-color: rgba(89, 177, 122, 1);
 }
