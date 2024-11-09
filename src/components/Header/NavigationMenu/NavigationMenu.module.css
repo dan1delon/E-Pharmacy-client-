@@ -42,7 +42,7 @@
     bottom: 50%;
     left: auto;
     right: -17px;
-    transform: translateY(50%) rotate(-90deg) !important;
+    transform: translateX(0) translateY(50%) rotate(-90deg);
   }
 }
 
