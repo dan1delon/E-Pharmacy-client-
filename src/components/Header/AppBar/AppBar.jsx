@@ -9,13 +9,19 @@ import MobileMenu from '../MobileMenu/MobileMenu';
 const AppBar = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/home';
+  const isAuthorizationPage =
+    location.pathname === '/login' || location.pathname === '/register';
 
   return (
     <header className={clsx(css.header, { [css.greenBackground]: isHomePage })}>
       <div className={css.wrapper}>
         <Logo />
-        <NavigationMenu />
-        <UserMenu />
+        {!isAuthorizationPage && (
+          <>
+            <NavigationMenu />
+            <UserMenu />
+          </>
+        )}
       </div>
       <MobileMenu />
     </header>
