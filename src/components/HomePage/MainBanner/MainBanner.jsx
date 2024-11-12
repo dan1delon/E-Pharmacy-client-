@@ -10,6 +10,7 @@ const MainBanner = () => {
             Say goodbye to all your healthcare worries with us
           </p>
         </div>
+        <div className={css.background} />
       </div>
     </div>
   );
