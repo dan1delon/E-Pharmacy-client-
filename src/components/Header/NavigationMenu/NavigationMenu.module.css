@@ -37,20 +37,13 @@
   right: 50%;
   transform: translateX(50%);
   background-color: var(--primary-white-color);
-
-  @media screen and (min-width: 1440px) {
-    bottom: 50%;
-    right: -17px;
-    transform: translateX(0) translateY(50%) rotate(-90deg);
-  }
 }
 
 @media screen and (min-width: 1440px) {
   .wrapper .link:not(:last-child)::after {
-    bottom: 50% !important;
-    left: auto !important;
-    right: -17px !important;
-    transform: translateX(0) translateY(50%) rotate(-90deg) !important;
+    bottom: 50%;
+    right: -17px;
+    transform: translateX(0) translateY(50%) rotate(-90deg);
   }
 }
 
