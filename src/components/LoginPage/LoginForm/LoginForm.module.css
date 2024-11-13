@@ -27,14 +27,14 @@
 
 .input {
   width: 100%;
-  padding: 13px 18px;
+  padding: 16px 20px;
   box-sizing: border-box;
   border: 1px solid rgba(29, 30, 33, 0.1);
   border-radius: 60px;
   background: var(--primary-white-color);
   color: var(--primary-black-color);
   font-family: var(--primary-font-family);
-  font-size: 12px;
+  font-size: 16px;
   line-height: 18px;
   letter-spacing: 0px;
   transition: all var(--transition-duration) var(--transition-timing-function);
@@ -52,7 +52,7 @@
 .input::placeholder {
   color: rgba(29, 30, 33, 0.4);
   font-family: var(--primary-font-family);
-  font-size: 12px;
+  font-size: 16px;
   line-height: 18px;
   letter-spacing: 0px;
 }
@@ -92,9 +92,6 @@
   text-align: center;
 }
 
-.linkLogin:hover {
-}
-
 .errorMessage {
   color: var(--primary-dark-red-color);
   font-size: 12px;
@@ -130,7 +127,7 @@
 .showPasswordBtn {
   display: block;
   width: 20px;
-  height: 20px;
+  height: 25px;
   position: absolute;
   right: 20px;
   top: 12.5px;

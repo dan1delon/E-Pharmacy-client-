@@ -26,7 +26,7 @@
 <svg id="icon-filter" viewBox="0 0 32 32">
 <path fill="none" stroke="#fff" stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3.4286" d="M2.651 4l10.674 12.594v8.731l5.326 2.674v-11.406l10.674-12.594h-26.674z"></path>
 </svg>
-<svg id="icon-lightning-01" viewBox="0 0 32 32">
+<svg id="icon-lightning" viewBox="0 0 32 32">
 <path fill="none" stroke="#59b17a" stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.4" d="M5.456 16.912c-0.464 0.56-0.704 0.832-0.704 1.072 0 0.208 0.080 0.4 0.24 0.528 0.192 0.144 0.544 0.144 1.28 0.144h9.728l-1.344 10.672 11.872-14.256c0.464-0.56 0.704-0.832 0.704-1.072 0-0.208-0.080-0.4-0.24-0.528-0.192-0.144-0.544-0.144-1.28-0.144h-9.712l1.328-10.672-11.872 14.256z"></path>
 </svg>
 <svg id="icon-phone" viewBox="0 0 32 32">

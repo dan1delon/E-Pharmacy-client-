@@ -1,3 +1,4 @@
+import AddPharmacyPromo from '../../components/HomePage/AddPharmacyPromo/AddPharmacyPromo';
 import MainBanner from '../../components/HomePage/MainBanner/MainBanner';
 import MedicineStores from '../../components/HomePage/MedicineStores/MedicineStores';
 import PromoBanners from '../../components/HomePage/PromoBanners/PromoBanners';
@@ -9,6 +10,7 @@ const HomePage = () => {
       <MainBanner />
       <PromoBanners />
       <MedicineStores />
+      <AddPharmacyPromo />
     </div>
   );
 };
