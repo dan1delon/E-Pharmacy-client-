@@ -11,7 +11,7 @@
 <path fill="none" stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="3" stroke="#000" d="M14.66 25.32c-5.9 0-10.66-4.78-10.66-10.66 0-5.9 4.76-10.66 10.66-10.66 5.88 0 10.66 4.76 10.66 10.66 0 5.88-4.78 10.66-10.66 10.66z"></path>
 <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" stroke="#000" d="M28 28l-5.8-5.82"></path>
 </svg>
-<svg id="icon-chevron-down" viewBox="0 0 32 32">
+<svg id="icon-down" viewBox="0 0 32 32">
 <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" stroke="#000" d="M8 12l8 8 8-8"></path>
 </svg>
 <svg id="icon-burger-menu" viewBox="0 0 32 32">
