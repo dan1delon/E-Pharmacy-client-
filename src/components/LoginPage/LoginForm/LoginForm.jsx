@@ -4,12 +4,17 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import Icon from '../../../shared/Icon/Icon';
 import css from './LoginForm.module.css';
-import { NavLink } from 'react-router-dom';
 import LoginFormSchema from '../../../helpers/Schemas/LoginFormSchema';
+import { useModal } from '../../../context';
+import RegisterModal from '../../MedicinePage/RegisterModal/RegisterModal';
+import { useNavigate } from 'react-router-dom';
 
-const LoginForm = () => {
+const LoginForm = ({ isModal = false }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isPasswordTouched, setIsPasswordTouched] = useState(false);
+
+  const { openModal, closeModal } = useModal();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -26,9 +31,19 @@ const LoginForm = () => {
     },
   });
 
-  const onSubmit = data => {
+  const onSubmit = (e, data) => {
     console.log(data);
+    if (isModal) closeModal(e);
+
     reset();
+  };
+
+  const handleRegisterBtn = () => {
+    if (isModal) {
+      openModal(<RegisterModal />);
+    } else {
+      navigate('/register');
+    }
   };
 
   const handleClickShowPassword = () => {
@@ -44,7 +59,10 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={clsx(isModal ? css.formModal : css.form)}
+    >
       <div className={css.inputWrapper}>
         <label className={css.labelWrapper}>
           <input
@@ -99,9 +117,13 @@ const LoginForm = () => {
         <button type="submit" className={css.btn}>
           Log in
         </button>
-        <NavLink to="/register" className={css.linkLogin}>
+        <button
+          className={css.btnLogin}
+          type="button"
+          onClick={handleRegisterBtn}
+        >
           Don't have an account?
-        </NavLink>
+        </button>
       </div>
     </form>
   );

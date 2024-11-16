@@ -4,12 +4,17 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import Icon from '../../../shared/Icon/Icon';
 import css from './RegisterForm.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import RegisterFormSchema from '../../../helpers/Schemas/RegisterFormSchema';
+import { useModal } from '../../../context';
+import LoginModal from '../../MedicinePage/LoginModal/LoginModal';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ isModal = false }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isPasswordTouched, setIsPasswordTouched] = useState(false);
+
+  const { openModal, closeModal } = useModal();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -28,9 +33,19 @@ const RegistrationForm = () => {
     },
   });
 
-  const onSubmit = data => {
+  const onSubmit = (e, data) => {
     console.log(data);
+    if (isModal) closeModal(e);
+
     reset();
+  };
+
+  const handleLoginBtn = () => {
+    if (isModal) {
+      openModal(<LoginModal />);
+    } else {
+      navigate('/login');
+    }
   };
 
   const handleClickShowPassword = () => {
@@ -46,43 +61,60 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={isModal ? css.formModal : css.form}
+    >
       <div className={css.inputWrapper}>
-        <label className={css.labelWrapper}>
+        <label
+          className={(isModal && css.modalLabelWrapper) || css.labelWrapper}
+        >
           <input
             type="text"
             {...register('name')}
             placeholder="User name"
-            className={clsx(css.input, { [css.inputError]: errors.name })}
+            className={clsx((isModal && css.modalInput) || css.input, {
+              [css.inputError]: errors.name,
+            })}
           />
           {errors.name && (
             <p className={css.errorMessage}>{errors.name?.message}</p>
           )}
         </label>
-        <label className={css.labelWrapper}>
+        <label
+          className={(isModal && css.modalLabelWrapper) || css.labelWrapper}
+        >
           <input
             type="email"
             {...register('email')}
             placeholder="Email address"
-            className={clsx(css.input, { [css.inputError]: errors.email })}
+            className={clsx((isModal && css.modalInput) || css.input, {
+              [css.inputError]: errors.email,
+            })}
           />
           {errors.email && (
             <p className={css.errorMessage}>{errors.email?.message}</p>
           )}
         </label>
-        <label className={css.labelWrapper}>
+        <label
+          className={(isModal && css.modalLabelWrapper) || css.labelWrapper}
+        >
           <input
             type="tel"
             pattern="[0-9]*"
             {...register('phone')}
             placeholder="Phone number"
-            className={clsx(css.input, { [css.inputError]: errors.phone })}
+            className={clsx((isModal && css.modalInput) || css.input, {
+              [css.inputError]: errors.phone,
+            })}
           />
           {errors.phone && (
             <p className={css.errorMessage}>{errors.phone?.message}</p>
           )}
         </label>
-        <label className={css.labelWrapper}>
+        <label
+          className={(isModal && css.modalLabelWrapper) || css.labelWrapper}
+        >
           <input
             type={showPassword ? 'text' : 'password'}
             {...register('password')}
@@ -90,7 +122,7 @@ const RegistrationForm = () => {
             autoComplete="on"
             onFocus={handlePasswordFocus}
             onBlur={handlePasswordBlur}
-            className={clsx(css.input, {
+            className={clsx((isModal && css.modalInput) || css.input, {
               [css.inputError]: errors.password,
               [css.inputSuccess]: !errors.password && getValues('password'),
             })}
@@ -120,13 +152,13 @@ const RegistrationForm = () => {
           )}
         </label>
       </div>
-      <div className={css.btnWrapper}>
+      <div className={(isModal && css.modalBtnWrapper) || css.btnWrapper}>
         <button type="submit" className={css.btn}>
           Register
         </button>
-        <NavLink to="/login" className={css.linkLogin}>
+        <button type="button" className={css.btnLogin} onClick={handleLoginBtn}>
           Already have an account?
-        </NavLink>
+        </button>
       </div>
     </form>
   );

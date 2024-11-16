@@ -5,14 +5,9 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const Modal = ({ children }) => {
   const { closeModal } = useModal();
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const handleCloseModal = e => {
     closeModal(e);
-    if (location.pathname === '/training') {
-      navigate('/dictionary');
-    }
   };
 
   return (
@@ -23,7 +18,7 @@ const Modal = ({ children }) => {
           aria-label="close-modal-window-button"
           onClick={handleCloseModal}
         >
-          <Icon iconId="icon-close" className={css.iconClose} />
+          <Icon iconId="icon-x" className={css.iconClose} />
         </button>
         {children}
       </div>
