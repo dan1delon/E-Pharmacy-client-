@@ -1,18 +1,14 @@
 import css from './ProductOverview.module.css';
-import products from '../../../products.json';
-import { useParams } from 'react-router-dom';
 import Icon from '../../../shared/Icon/Icon';
 import { useModal } from '../../../context';
 import { useState } from 'react';
 import LoginModal from '../../../components/MedicinePage/LoginModal/LoginModal';
 
-const ProductOverview = () => {
+const ProductOverview = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
 
   const { openModal } = useModal();
   const loggedIn = false;
-  const { productId } = useParams();
-  const product = products.find(product => product.id === productId);
 
   const handleAddToCart = () => {
     if (!loggedIn) {
