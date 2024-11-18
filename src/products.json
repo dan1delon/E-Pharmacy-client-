@@ -10,18 +10,21 @@
     "description": "Although generally safe when used as directed, excessive use of this product may result in side effects. It's important to consult with a healthcare provider before using this product, especially if you are pregnant, nursing, or taking other medications. This balanced approach ensures the benefits of the product while emphasizing the need for proper use and caution.\n\nKey Benefits:\n- Supports overall health by providing essential nutrients.\n- May help in managing specific health conditions, depending on the type of product.\n- Known for its potential to enhance immune function and boost vitality.\n- Ideal for regular use to maintain well-being and support daily health needs.\n- Contains active ingredients that can contribute to your overall fitness and health goals.",
     "reviews": [
       {
+        "id": "0",
         "name": "John Doe",
         "date": "2023-05-14",
         "rating": 5,
         "text": "Aspirin has been a lifesaver for my headaches. Works quickly and efficiently!"
       },
       {
+        "id": "1",
         "name": "Jane Smith",
         "date": "2023-04-22",
         "rating": 4,
         "text": "Good product, but it upset my stomach a little."
       },
       {
+        "id": "2",
         "name": "Emily Clark",
         "date": "2023-03-10",
         "rating": 5,
@@ -40,18 +43,21 @@
     "description": "Although generally safe when used as directed, excessive use of this product may result in side effects. It's important to consult with a healthcare provider before using this product, especially if you are pregnant, nursing, or taking other medications. This balanced approach ensures the benefits of the product while emphasizing the need for proper use and caution.\n\nKey Benefits:\n- Supports overall health by providing essential nutrients.\n- May help in managing specific health conditions, depending on the type of product.\n- Known for its potential to enhance immune function and boost vitality.\n- Ideal for regular use to maintain well-being and support daily health needs.\n- Contains active ingredients that can contribute to your overall fitness and health goals.",
     "reviews": [
       {
+        "id": "0",
         "name": "Mike Johnson",
         "date": "2023-06-12",
         "rating": 5,
         "text": "Fantastic for reducing fever and mild pains. A staple in my medicine cabinet."
       },
       {
+        "id": "1",
         "name": "Sarah Lee",
         "date": "2023-05-20",
         "rating": 4,
         "text": "Works as expected, though it took some time to relieve my headache."
       },
       {
+        "id": "2",
         "name": "Chris Evans",
         "date": "2023-04-18",
         "rating": 5,
@@ -70,18 +76,21 @@
     "description": "Although generally safe when used as directed, excessive use of this product may result in side effects. It's important to consult with a healthcare provider before using this product, especially if you are pregnant, nursing, or taking other medications. This balanced approach ensures the benefits of the product while emphasizing the need for proper use and caution.\n\nKey Benefits:\n- Supports overall health by providing essential nutrients.\n- May help in managing specific health conditions, depending on the type of product.\n- Known for its potential to enhance immune function and boost vitality.\n- Ideal for regular use to maintain well-being and support daily health needs.\n- Contains active ingredients that can contribute to your overall fitness and health goals.",
     "reviews": [
       {
+        "id": "0",
         "name": "Laura Brown",
         "date": "2023-05-30",
         "rating": 4,
         "text": "Good for relieving joint pain, but I experienced mild stomach discomfort."
       },
       {
+        "id": "1",
         "name": "George White",
         "date": "2023-05-10",
         "rating": 5,
         "text": "Highly effective for inflammation. Helped me recover from a sprained ankle."
       },
       {
+        "id": "2",
         "name": "Nancy Wilson",
         "date": "2023-04-28",
         "rating": 3,
@@ -101,6 +110,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Jill Gregory",
+        "date": "2023-05-15",
         "text": "Naproxen works great for joint pain, but it's a bit hard on the stomach.",
         "rating": "4"
       }
@@ -118,6 +129,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "John Doe",
+        "date": "2023-05-20",
         "text": "Very effective for treating infections. It cleared up my ear infection quickly.",
         "rating": "5"
       }
@@ -131,11 +144,13 @@
     "stock": "17",
     "price": "29.88",
     "category": "Heart",
-    "description": "Lisinopril is an ACE inhibitor used to treat high blood pressure and heart failure.",
+    "description": "Lisinopril is an ACE inhibitor used to treat high blood pressure and heart failure. Although generally safe when used as directed, excessive use of this product may result in side effects. It's important to consult with a healthcare provider before using this product, especially if you are pregnant, nursing, or taking other medications. This balanced approach ensures the benefits of the product while emphasizing the need for proper use and caution.\n\nKey Benefits:\n- Supports overall health by providing essential nutrients.\n- May help in managing specific health conditions, depending on the type of product.\n- Known for its potential to enhance immune function and boost vitality.\n- Ideal for regular use to maintain well-being and support daily health needs.\n- Contains active ingredients that can contribute to your overall fitness and health goals.",
     "reviews": [
       {
         "id": "1",
-        "text": "Lisinopril has helped lower my blood pressure significantly. Although generally safe when used as directed, excessive use of this product may result in side effects. It's important to consult with a healthcare provider before using this product, especially if you are pregnant, nursing, or taking other medications. This balanced approach ensures the benefits of the product while emphasizing the need for proper use and caution.\n\nKey Benefits:\n- Supports overall health by providing essential nutrients.\n- May help in managing specific health conditions, depending on the type of product.\n- Known for its potential to enhance immune function and boost vitality.\n- Ideal for regular use to maintain well-being and support daily health needs.\n- Contains active ingredients that can contribute to your overall fitness and health goals.",
+        "name": "Jane Smith",
+        "date": "2023-05-25",
+        "text": "Lisinopril has helped lower my blood pressure significantly. I highly recommend it!",
         "rating": "5"
       }
     ]
@@ -152,6 +167,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "John Doe",
+        "date": "2023-05-30",
         "text": "Cleared up my urinary tract infection fast.",
         "rating": "5"
       }
@@ -169,6 +186,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Jane Smith",
+        "date": "2023-06-05",
         "text": "Works well for reducing swelling and lowering blood pressure.",
         "rating": "4"
       }
@@ -186,6 +205,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Bob Johnson",
+        "date": "2022-06-10",
         "text": "Effective for treating inflammation, but it can cause weight gain and mood swings.",
         "rating": "3"
       }
@@ -203,11 +224,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Emily Davis",
+        "date": "2023-06-15",
         "text": "It helps with my anxiety and keeps my heart rate stable.",
         "rating": "5"
       },
       {
         "id": "2",
+        "name": "Michael Wilson",
+        "date": "2023-06-20",
         "text": "Good for controlling high blood pressure, but causes some dizziness.",
         "rating": "4"
       }
@@ -225,6 +250,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Sarah Thompson",
+        "date": "2023-06-05",
         "text": "Helps manage my acid reflux without any side effects.",
         "rating": "5"
       }
@@ -242,6 +269,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "John Smith",
+        "date": "2023-06-10",
         "text": "Helps with anxiety and muscle spasms, but can be addictive.",
         "rating": "4"
       }
@@ -259,11 +288,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Jane Doe",
+        "date": "2023-06-15",
         "text": "Helps maintain good cholesterol levels. No noticeable side effects.",
         "rating": "5"
       },
       {
         "id": "2",
+        "name": "John Doe",
+        "date": "2023-06-20",
         "text": "Effective for lowering cholesterol, but I experienced muscle aches.",
         "rating": "4"
       }
@@ -281,6 +314,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Alice Johnson",
+        "date": "2023-06-25",
         "text": "Good for pain relief, but causes drowsiness and dizziness.",
         "rating": "4"
       }
@@ -298,6 +333,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Michael Johnson",
+        "date": "2023-07-01",
         "text": "Helps to control my blood pressure effectively.",
         "rating": "5"
       }
@@ -315,11 +352,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "John Doe",
+        "date": "2023-07-05",
         "text": "Helps regulate my blood sugar levels without causing too many side effects.",
         "rating": "5"
       },
       {
         "id": "2",
+        "name": "Jane Smith",
+        "date": "2023-07-10",
         "text": "Causes some stomach discomfort, but works well for blood sugar control.",
         "rating": "4"
       }
@@ -337,11 +378,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Emily Davis",
+        "date": "2023-07-15",
         "text": "Effective for anxiety relief, but can be habit-forming.",
         "rating": "4"
       },
       {
         "id": "2",
+        "name": "Michael Wilson",
+        "date": "2023-07-20",
         "text": "Helps me stay calm during stressful situations, but I try to use it sparingly.",
         "rating": "5"
       }
@@ -359,6 +404,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "John Doe",
+        "date": "2023-07-25",
         "text": "Helps lower my cholesterol levels effectively.",
         "rating": "5"
       }
@@ -376,11 +423,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Jane Smith",
+        "date": "2023-07-30",
         "text": "Works well for sleep, but can leave me feeling groggy in the morning.",
         "rating": "4"
       },
       {
         "id": "2",
+        "name": "Michael Wilson",
+        "date": "2023-08-05",
         "text": "Great for insomnia, but I only use it when absolutely necessary.",
         "rating": "5"
       }
@@ -398,6 +449,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "John Holland",
+        "date": "2023-07-25",
         "text": "Good supplement for preventing deficiencies, easy to take.",
         "rating": "5"
       }
@@ -415,11 +468,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Emily Davis",
+        "date": "2023-07-30",
         "text": "Great for strengthening bones, but a bit hard on the stomach.",
         "rating": "4"
       },
       {
         "id": "2",
+        "name": "Michael Wilson",
+        "date": "2023-08-05",
         "text": "Helps with calcium levels, but can cause constipation.",
         "rating": "3"
       }
@@ -437,11 +494,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Michael Wilson",
+        "date": "2023-08-10",
         "text": "Perfect for boosting my vitamin D levels, I feel much better.",
         "rating": "5"
       },
       {
         "id": "2",
+        "name": "Emily Davis",
+        "date": "2023-08-15",
         "text": "Good for maintaining bone health, but it can leave a weird aftertaste.",
         "rating": "4"
       }
@@ -459,11 +520,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Michael Wilson",
+        "date": "2023-08-20",
         "text": "Helps with joint pain and supports heart health.",
         "rating": "5"
       },
       {
         "id": "2",
+        "name": "Jane Davis",
+        "date": "2023-08-25",
         "text": "Good supplement, but the fishy aftertaste is unpleasant.",
         "rating": "4"
       }
@@ -481,11 +546,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Emily Davis",
+        "date": "2023-08-30",
         "text": "Great for overall health, easy to take and effective.",
         "rating": "5"
       },
       {
         "id": "2",
+        "name": "Michael Wilson",
+        "date": "2023-09-05",
         "text": "These are good but made my stomach feel a bit upset.",
         "rating": "3"
       }
@@ -503,11 +572,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Emily Davis",
+        "date": "2023-09-10",
         "text": "Very effective for keeping my teeth clean and breath fresh.",
         "rating": "5"
       },
       {
         "id": "2",
+        "name": "George Wilson",
+        "date": "2023-09-15",
         "text": "Good toothpaste for daily use, but a bit too minty for my taste.",
         "rating": "4"
       }
@@ -525,11 +598,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Jane Davis",
+        "date": "2023-09-20",
         "text": "Great for freshening breath, but can be a bit harsh on the gums.",
         "rating": "4"
       },
       {
         "id": "2",
+        "name": "David Wilson",
+        "date": "2023-09-25",
         "text": "Nice and refreshing, I use it every day after brushing.",
         "rating": "5"
       }
@@ -547,6 +624,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Emily Davis",
+        "date": "2023-09-30",
         "text": "Very soft bristles, perfect for my sensitive gums.",
         "rating": "5"
       }
@@ -564,6 +643,8 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Sarah Johnson",
+        "date": "2023-10-05",
         "text": "Perfect for sensitive skin, it cleans without drying out my face.",
         "rating": "5"
       }
@@ -581,11 +662,15 @@
     "reviews": [
       {
         "id": "1",
+        "name": "Michael Smith",
+        "date": "2023-10-10",
         "text": "Makes my skin feel smooth and hydrated, without being greasy.",
         "rating": "5"
       },
       {
         "id": "2",
+        "name": "Emily Davis",
+        "date": "2023-10-15",
         "text": "Great moisturizer for daily use, but it takes a bit to absorb.",
         "rating": "4"
       }
