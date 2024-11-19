@@ -4,7 +4,6 @@ import Loader from './components/Loader/Loader.jsx';
 import Layout from './components/Layout/Layout.jsx';
 import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
 
 const RegisterPage = lazy(() =>
   import('./pages/RegisterPage/RegisterPage.jsx')
@@ -26,7 +25,6 @@ const MedicinePage = lazy(() =>
 function App() {
   return (
     <Layout>
-      <ScrollToTop />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route

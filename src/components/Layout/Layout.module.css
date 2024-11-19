@@ -31,6 +31,11 @@
   }
 }
 
+.content,
+.container {
+  overflow: visible;
+}
+
 .authorizationPage {
   display: flex;
   justify-content: center;
