@@ -4,6 +4,7 @@ import Logo from '../Logo/Logo';
 import css from './MobileMenu.module.css';
 import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import { NavLink, useLocation } from 'react-router-dom';
+import LoggedInMenu from '../LoggedInMenu/LoggedInMenu';
 import clsx from 'clsx';
 
 const MobileMenu = () => {
@@ -28,14 +29,17 @@ const MobileMenu = () => {
       <div className={css.wrapper}>
         <Logo />
         {!isAuthorizationPage && (
-          <button type="button" className={css.button} onClick={toggleMenu}>
-            <Icon
-              iconId="icon-burger-menu"
-              className={clsx(css.iconMenu, {
-                [css.iconMenuBlack]: !isHomePage,
-              })}
-            />
-          </button>
+          <div className={css.userMenuWrapper}>
+            <LoggedInMenu />
+            <button type="button" className={css.button} onClick={toggleMenu}>
+              <Icon
+                iconId="icon-burger-menu"
+                className={clsx(css.iconMenu, {
+                  [css.iconMenuBlack]: !isHomePage,
+                })}
+              />
+            </button>
+          </div>
         )}
 
         {isOpen && (
