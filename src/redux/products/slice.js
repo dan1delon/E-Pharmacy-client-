@@ -35,7 +35,7 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProductsById.fulfilled, (state, action) => {
         state.loading = false;
-        state.selectedProduct = action.payload.data.data;
+        state.selectedProduct = action.payload.data;
       })
       .addCase(fetchCategories.fulfilled, (state, action) => {
         state.loading = false;

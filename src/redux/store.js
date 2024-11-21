@@ -19,8 +19,14 @@ import { productsReducer } from './products/slice';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'userInfo'],
 };
+
+// const cartPersistConfig = {
+//   key: 'cart',
+//   storage,
+//   whitelist: ['items'],
+// };
 
 export const store = configureStore({
   reducer: {

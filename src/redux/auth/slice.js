@@ -48,6 +48,7 @@ const authSlice = createSlice({
       })
       // Refresh
       .addCase(refreshUserAPI.fulfilled, (state, action) => {
+        state.token = action.payload.data.accessToken;
         state.loading = false;
         state.isLoggedIn = true;
       })

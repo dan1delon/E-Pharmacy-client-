@@ -4,11 +4,15 @@ import ReactEllipsisText from 'react-ellipsis-text';
 import { useMediaQuery } from '@mui/material';
 import { useModal } from '../../../context';
 import LoginModal from '../LoginModal/LoginModal';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../../redux/auth/selectors';
+import { updateCart } from '../../../redux/cart/operations';
 
 const MedicineItem = ({ product }) => {
   const { openModal } = useModal();
-  const loggedIn = false;
+  const loggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1439px)');
 
   const handleAddToCart = () => {
@@ -16,11 +20,11 @@ const MedicineItem = ({ product }) => {
       return openModal(<LoginModal />);
     }
 
-    console.log(product);
+    dispatch(updateCart({ productId: product._id, quantity: 1 }));
   };
 
   const handleDetailsClick = () => {
-    navigate(`/product/${product.id}`);
+    navigate(`/product/${product._id}`);
   };
 
   return (
