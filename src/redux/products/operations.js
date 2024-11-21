@@ -36,3 +36,16 @@ export const fetchProductsById = createAsyncThunk(
     }
   }
 );
+
+export const fetchCategories = createAsyncThunk(
+  'products/fetchCategories',
+  async (_, thunkApi) => {
+    try {
+      const response = await instance.get(`/products/all/categories`);
+      return response.data;
+    } catch (error) {
+      toast.error(error.message);
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

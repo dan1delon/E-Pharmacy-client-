@@ -1,17 +1,10 @@
 import css from './MedicineList.module.css';
 import MedicineItem from '../MedicineItem/MedicineItem';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectProducts } from '../../../redux/products/selectors.js';
-import { fetchProducts } from '../../../redux/products/operations';
-import { useEffect } from 'react';
 
 const MedicineList = () => {
   const products = useSelector(selectProducts);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
 
   return (
     <ul className={css.productList}>

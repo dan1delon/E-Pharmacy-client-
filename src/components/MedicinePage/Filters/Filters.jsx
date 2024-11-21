@@ -4,15 +4,13 @@ import { usePopover } from '../../../hooks/usePopover';
 import clsx from 'clsx';
 import Icon from '../../../shared/Icon/Icon';
 import { useSelector } from 'react-redux';
-import { selectProducts } from '../../../redux/products/selectors';
+import { selectCategories } from '../../../redux/products/selectors';
 
 const Filters = () => {
   const [keyword, setKeyword] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const products = useSelector(selectProducts);
-
-  const categories = [...new Set(products.map(product => product.category))];
+  const categories = useSelector(selectCategories);
 
   const handleFiltration = () => {
     console.log({ keyword, selectedCategory });
