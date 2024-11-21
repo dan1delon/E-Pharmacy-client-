@@ -3,17 +3,23 @@ import css from './Filters.module.css';
 import { usePopover } from '../../../hooks/usePopover';
 import clsx from 'clsx';
 import Icon from '../../../shared/Icon/Icon';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectCategories } from '../../../redux/products/selectors';
+import { fetchProducts } from '../../../redux/products/operations';
 
 const Filters = () => {
   const [keyword, setKeyword] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const categories = useSelector(selectCategories);
+  const dispatch = useDispatch();
 
   const handleFiltration = () => {
-    console.log({ keyword, selectedCategory });
+    const filters = {
+      name: keyword,
+      category: selectedCategory,
+    };
+    dispatch(fetchProducts(filters));
   };
 
   const handleSearchChange = e => {
