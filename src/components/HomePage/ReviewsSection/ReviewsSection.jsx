@@ -1,11 +1,20 @@
+import { useDispatch, useSelector } from 'react-redux';
 import css from './ReviewsSection.module.css';
-import reviews from '../../../reviews.json';
 import { useMediaQuery } from '@mui/material';
+import { selectReviews } from '../../../redux/reviews/selectors';
+import { useEffect } from 'react';
+import { fetchReviews } from '../../../redux/reviews/operations';
 
 const ReviewsSection = () => {
-  const reviewsList = reviews;
+  const reviewsList = useSelector(selectReviews);
+  const dispatch = useDispatch();
+
   const isMobile = useMediaQuery('(max-width:767px)');
   const isTablet = useMediaQuery('(min-width:768px) and (max-width:1439px)');
+
+  useEffect(() => {
+    dispatch(fetchReviews());
+  }, [dispatch]);
 
   let visibleReviews;
   if (isMobile) {

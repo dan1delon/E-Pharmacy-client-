@@ -1,31 +1,51 @@
+import { useEffect } from 'react';
 import css from './MedicineStores.module.css';
-import nearestStores from '../../../nearest_pharmacies.json';
-import pharmacies from '../../../pharmacies.json';
 import StoreItem from '../StoreItem/StoreItem';
 import { useLocation, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectNearestStores,
+  selectStores,
+} from '../../../redux/stores/selectors';
+import {
+  fetchNearestStores,
+  fetchStores,
+} from '../../../redux/stores/operations';
 
 const MedicineStores = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  const nearestStores = useSelector(selectNearestStores);
+  const allStores = useSelector(selectStores);
 
   const isMedicineStorePage = location.pathname === '/medicine-store';
+
+  useEffect(() => {
+    if (isMedicineStorePage) {
+      dispatch(fetchStores({ perPage: 9 }));
+    } else {
+      dispatch(fetchNearestStores());
+    }
+  }, [dispatch, isMedicineStorePage]);
 
   const handleShopClick = () => {
     navigate('/medicine');
   };
 
   const getRandomStores = (stores, count) => {
+    if (!Array.isArray(stores)) {
+      return [];
+    }
     const shuffled = [...stores].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
   };
 
-  const storesNearby = nearestStores;
-  const allStores = pharmacies;
-
   const storesToShow = isMedicineStorePage
     ? allStores
-    : getRandomStores(storesNearby, 6);
+    : getRandomStores(nearestStores, 6);
 
   return (
     <div className={isMedicineStorePage ? css.medicineWrapper : css.wrapper}>
@@ -47,7 +67,7 @@ const MedicineStores = () => {
       >
         {storesToShow.map((store, index) => (
           <li
-            key={index}
+            key={store._id || index}
             className={clsx(css.storeItem, {
               [css.medicineStoreItem]: isMedicineStorePage,
             })}
