@@ -123,3 +123,16 @@
     gap: 16px;
   }
 }
+
+.btnLogout {
+  padding: 13px 32px;
+  border: 1px solid rgba(241, 241, 241, 0.5);
+  border-radius: 60px;
+  background: transparent;
+
+  color: var(--secondary-white-color);
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}

@@ -8,6 +8,9 @@ const MedicineList = () => {
 
   return (
     <ul className={css.productList}>
+      {products.length === 0 && (
+        <p className={css.noProducts}>No products found:(</p>
+      )}
       {products.map(product => (
         <li key={product.id} className={css.productItem}>
           <MedicineItem product={product} />

@@ -61,6 +61,12 @@ const Filters = () => {
           {isOpen && (
             <div className={clsx(css.popover, { [css.visible]: isVisible })}>
               <ul className={css.popoverList}>
+                <li
+                  className={css.popoverItem}
+                  onClick={() => handleCategoryChange('')}
+                >
+                  All
+                </li>
                 {categories.map(category => (
                   <li
                     key={category}

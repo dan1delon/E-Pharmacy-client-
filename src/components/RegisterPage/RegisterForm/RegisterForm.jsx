@@ -8,6 +8,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import RegisterFormSchema from '../../../helpers/Schemas/RegisterFormSchema';
 import { useModal } from '../../../context';
 import LoginModal from '../../MedicinePage/LoginModal/LoginModal';
+import { useDispatch } from 'react-redux';
+import { registerAPI } from '../../../redux/auth/operations';
 
 const RegistrationForm = ({ isModal = false }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +17,7 @@ const RegistrationForm = ({ isModal = false }) => {
 
   const { openModal, closeModal } = useModal();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -33,8 +36,9 @@ const RegistrationForm = ({ isModal = false }) => {
     },
   });
 
-  const onSubmit = (e, data) => {
-    console.log(data);
+  const onSubmit = (data, e) => {
+    dispatch(registerAPI(data));
+
     if (isModal) closeModal(e);
 
     reset();

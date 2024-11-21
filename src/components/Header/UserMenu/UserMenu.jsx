@@ -2,12 +2,14 @@ import { NavLink, useLocation } from 'react-router-dom';
 import css from './UserMenu.module.css';
 import clsx from 'clsx';
 import LoggedInMenu from '../LoggedInMenu/LoggedInMenu';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../../redux/auth/selectors';
 
 const UserMenu = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/home';
 
-  const isLoggedIn = true;
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <div className={css.wrapper}>

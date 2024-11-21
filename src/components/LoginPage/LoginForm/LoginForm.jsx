@@ -8,6 +8,8 @@ import LoginFormSchema from '../../../helpers/Schemas/LoginFormSchema';
 import { useModal } from '../../../context';
 import RegisterModal from '../../MedicinePage/RegisterModal/RegisterModal';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginAPI } from '../../../redux/auth/operations';
 
 const LoginForm = ({ isModal = false }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +17,7 @@ const LoginForm = ({ isModal = false }) => {
 
   const { openModal, closeModal } = useModal();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -31,8 +34,8 @@ const LoginForm = ({ isModal = false }) => {
     },
   });
 
-  const onSubmit = (e, data) => {
-    console.log(data);
+  const onSubmit = (data, e) => {
+    dispatch(loginAPI(data));
     if (isModal) closeModal(e);
 
     reset();

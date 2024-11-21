@@ -1,9 +1,12 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Loader from './components/Loader/Loader.jsx';
 import Layout from './components/Layout/Layout.jsx';
 import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsRefreshing } from './redux/auth/selectors.js';
+import { refreshUserAPI } from './redux/auth/operations.js';
 
 const RegisterPage = lazy(() =>
   import('./pages/RegisterPage/RegisterPage.jsx')
@@ -23,43 +26,53 @@ const MedicinePage = lazy(() =>
 );
 
 function App() {
+  const dispatch = useDispatch();
+
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    dispatch(refreshUserAPI());
+  }, [dispatch]);
+
   return (
-    <Layout>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute>
-                <RegisterPage />
-              </RestrictedRoute>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <RestrictedRoute>
-                <LoginPage />
-              </RestrictedRoute>
-            }
-          />
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/medicine-store" element={<MedicineStorePage />} />
-          <Route path="/medicine" element={<MedicinePage />} />
-          <Route path="/product/:productId" element={<ProductPage />} />
-          <Route
-            path="/cart"
-            element={
-              <PrivateRoute>
-                <CartPage />
-              </PrivateRoute>
-            }
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
-    </Layout>
+    !isRefreshing && (
+      <Layout>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute>
+                  <RegisterPage />
+                </RestrictedRoute>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute>
+                  <LoginPage />
+                </RestrictedRoute>
+              }
+            />
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/medicine-store" element={<MedicineStorePage />} />
+            <Route path="/medicine" element={<MedicinePage />} />
+            <Route path="/product/:productId" element={<ProductPage />} />
+            <Route
+              path="/cart"
+              element={
+                <PrivateRoute>
+                  <CartPage />
+                </PrivateRoute>
+              }
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+      </Layout>
+    )
   );
 }
 
