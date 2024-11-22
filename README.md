@@ -1,8 +1,24 @@
-# React + Vite
+# E-Pharmacy Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend part of the **E-Pharmacy** project — a platform for finding pharmacies, browsing products, and placing orders.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- User registration and authentication.
+- Product search and filtering.
+- List of nearby pharmacies.
+- Cart management: adding, removing, and placing orders.
+- Responsive design for various devices.
+
+---
+
+## Technologies
+
+- **React**
+- **Redux Toolkit** for state management.
+- **React Router** for routing.
+- **MUI** for UI components.
+- **Axios** for API requests.
+
