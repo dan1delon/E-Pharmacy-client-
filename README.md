@@ -1,24 +1,24 @@
 # E-Pharmacy Frontend
 
-Цей репозиторій містить фронтенд частину проєкту **E-Pharmacy** — платформи для пошуку аптек, перегляду продуктів та оформлення замовлень.
+This repository contains the frontend part of the **E-Pharmacy** project — a platform for finding pharmacies, browsing products, and placing orders.
 
 ---
 
-## Функціонал
+## Features
 
-- Реєстрація та авторизація користувачів.
-- Пошук та фільтрація продуктів.
-- Список найближчих аптек.
-- Керування корзиною: додавання, видалення, оформлення замовлення.
-- Адаптивний дизайн для різних пристроїв.
+- User registration and authentication.
+- Product search and filtering.
+- List of nearby pharmacies.
+- Cart management: adding, removing, and placing orders.
+- Responsive design for various devices.
 
 ---
 
-## Технології
+## Technologies
 
 - **React**
-- **Redux Toolkit** для керування станом.
-- **React Router** для маршрутизації.
-- **MUI** для UI компонентів.
-- **Axios** для запитів до API.
+- **Redux Toolkit** for state management.
+- **React Router** for routing.
+- **MUI** for UI components.
+- **Axios** for API requests.
 
