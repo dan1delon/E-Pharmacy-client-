@@ -2,10 +2,10 @@ import css from './MedicineList.module.css';
 import MedicineItem from '../MedicineItem/MedicineItem';
 import { useSelector } from 'react-redux';
 import { selectProducts } from '../../../redux/products/selectors.js';
-import PaginationComponent from '../../../components/PaginationComponent/PaginationComponent';
 
 const MedicineList = () => {
   const products = useSelector(selectProducts);
+  console.log(products);
 
   return (
     <>

@@ -81,7 +81,7 @@ const MedicineStores = () => {
           </li>
         ))}
       </ul>
-      {isMedicineStorePage && <PaginationComponent />}
+      {/* {isMedicineStorePage && <PaginationComponent />} */}
     </div>
   );
 };
