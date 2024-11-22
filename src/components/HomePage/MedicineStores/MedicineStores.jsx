@@ -12,6 +12,7 @@ import {
   fetchNearestStores,
   fetchStores,
 } from '../../../redux/stores/operations';
+import PaginationComponent from '../../PaginationComponent/PaginationComponent';
 
 const MedicineStores = () => {
   const navigate = useNavigate();
@@ -80,6 +81,7 @@ const MedicineStores = () => {
           </li>
         ))}
       </ul>
+      {isMedicineStorePage && <PaginationComponent />}
     </div>
   );
 };

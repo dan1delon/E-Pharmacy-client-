@@ -8,6 +8,8 @@ import {
 const INITIAL_STATE = {
   products: [],
   categories: [],
+  totalPages: 1,
+  page: null,
   selectedProduct: null,
   loading: false,
   error: null,
@@ -27,11 +29,19 @@ const productsSlice = createSlice({
   name: 'products',
   initialState: INITIAL_STATE,
 
+  reducers: {
+    changeProductsPage: (state, action) => {
+      state.page = action.payload;
+    },
+  },
+
   extraReducers: builder => {
     builder
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
         state.products = action.payload.data.data;
+        state.totalPages = action.payload.data.totalPages;
+        state.page = action.payload.data.page;
       })
       .addCase(fetchProductsById.fulfilled, (state, action) => {
         state.loading = false;
@@ -60,4 +70,5 @@ const productsSlice = createSlice({
   },
 });
 
+export const { changeProductsPage } = productsSlice.actions;
 export const productsReducer = productsSlice.reducer;
