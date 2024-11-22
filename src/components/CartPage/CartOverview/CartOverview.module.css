@@ -13,26 +13,6 @@
   }
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--primary-green-color);
-  border-radius: 10px;
-  border: 1px solid var(--primary-white-color);
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-corner {
-  background: #ccc;
-}
-
 .cartItem {
   width: 100%;
   display: flex;

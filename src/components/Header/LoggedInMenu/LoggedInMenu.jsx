@@ -1,6 +1,4 @@
-import css from './LoggedInMenu.module.css';
-import Icon from '../../../shared/Icon/Icon';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { logoutAPI } from '../../../redux/auth/operations';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,9 +7,10 @@ import { useEffect, useState } from 'react';
 import { getUserInfoAPI } from '../../../redux/auth/operations';
 import { selectCart } from '../../../redux/cart/selectors';
 import { fetchCart } from '../../../redux/cart/operations';
+import css from './LoggedInMenu.module.css';
+import Icon from '../../../shared/Icon/Icon';
 
 const LoggedInMenu = () => {
-  const [isCartFetched, setCartFetched] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/home';
   const userInfo = useSelector(selectUserInfo);
@@ -19,18 +18,17 @@ const LoggedInMenu = () => {
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!token || isCartFetched) return;
-      if (!userInfo) {
-        await dispatch(getUserInfoAPI()).unwrap();
-      }
-      dispatch(fetchCart());
-      setCartFetched(true);
+      if (!token || isDataFetched) return;
+      await dispatch(getUserInfoAPI()).unwrap();
+      await dispatch(fetchCart()).unwrap();
+      setIsDataFetched(true);
     };
     fetchData();
-  }, [dispatch, token, userInfo, isCartFetched]);
+  }, [dispatch, token, isDataFetched]);
 
   const handleCartClick = () => {
     navigate('/cart');
@@ -38,6 +36,7 @@ const LoggedInMenu = () => {
 
   const handleLogout = () => {
     dispatch(logoutAPI());
+    setIsDataFetched(false);
   };
 
   return (

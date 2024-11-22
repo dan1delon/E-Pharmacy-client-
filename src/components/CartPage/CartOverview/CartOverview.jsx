@@ -1,29 +1,29 @@
-import { useState } from 'react';
 import Icon from '../../../shared/Icon/Icon';
 import css from './CartOverview.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCart } from '../../../redux/cart/selectors';
-import { updateCart } from '../../../redux/cart/operations';
+import { useDispatch } from 'react-redux';
+import { fetchCart, updateCart } from '../../../redux/cart/operations';
 
-const CartOverview = () => {
-  const cart = useSelector(selectCart);
+const CartOverview = ({ cart }) => {
   const dispatch = useDispatch();
 
-  const [quantity, setQuantity] = useState(1);
-
-  const handleAdd = productId => {
-    setQuantity(prevQuantity => prevQuantity + 1);
-    dispatch(updateCart({ productId, quantity }));
+  const handleAdd = (productId, currentQuantity) => {
+    fetchData(productId, currentQuantity + 1);
   };
 
-  const handleRemove = productId => {
-    if (quantity > 1) {
-      setQuantity(prevQuantity => prevQuantity - 1);
-      dispatch(updateCart({ productId, quantity }));
+  const handleRemove = (productId, currentQuantity) => {
+    if (currentQuantity > 1) {
+      fetchData(productId, currentQuantity - 1);
     }
   };
 
-  const handleDeleteProduct = productId => {};
+  const fetchData = async (productId, quantity) => {
+    await dispatch(updateCart({ productId, quantity })).unwrap();
+    await dispatch(fetchCart()).unwrap();
+  };
+
+  const handleDeleteProduct = productId => {
+    fetchData(productId, 0);
+  };
 
   return (
     <ul className={css.cartList}>
@@ -49,7 +49,9 @@ const CartOverview = () => {
                 <button
                   type="button"
                   className={css.buttonAddRemove}
-                  onClick={() => handleAdd(product.id)}
+                  onClick={() =>
+                    handleAdd(product.product._id, product.quantity)
+                  }
                 >
                   <Icon iconId="icon-plus" className={css.icon} />
                 </button>
@@ -57,7 +59,9 @@ const CartOverview = () => {
                 <button
                   type="button"
                   className={css.buttonAddRemove}
-                  onClick={() => handleRemove(product._id)}
+                  onClick={() =>
+                    handleRemove(product.product._id, product.quantity)
+                  }
                 >
                   <Icon iconId="icon-minus" className={css.icon} />
                 </button>
@@ -65,7 +69,7 @@ const CartOverview = () => {
               <button
                 type="button"
                 className={css.btnRemove}
-                onClick={() => handleDeleteProduct(product._id)}
+                onClick={() => handleDeleteProduct(product.product._id)}
               >
                 Remove
               </button>
