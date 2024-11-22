@@ -10,8 +10,6 @@ export const fetchProducts = createAsyncThunk(
       const response = await instance.get('/products', {
         params: { name, category, page, perPage },
       });
-      console.log(response.data);
-
       return response.data;
     } catch (error) {
       toast.error(error.message);

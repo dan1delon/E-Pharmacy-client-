@@ -5,7 +5,6 @@ import { selectProducts } from '../../../redux/products/selectors.js';
 
 const MedicineList = () => {
   const products = useSelector(selectProducts);
-  console.log(products);
 
   return (
     <>

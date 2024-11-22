@@ -18,6 +18,7 @@ const Filters = () => {
     const filters = {
       name: keyword,
       category: selectedCategory,
+      page: 1,
     };
     dispatch(fetchProducts(filters));
   };

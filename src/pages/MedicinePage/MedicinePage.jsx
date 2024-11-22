@@ -7,18 +7,22 @@ import {
   fetchProducts,
 } from '../../redux/products/operations';
 import { useEffect } from 'react';
-import { selectIsLoading } from '../../redux/products/selectors';
+import {
+  selectIsLoading,
+  selectProductsPage,
+} from '../../redux/products/selectors';
 import Loader from '../../components/Loader/Loader';
 import PaginationComponent from '../../components/PaginationComponent/PaginationComponent';
 
 const MedicinePage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
+  const currentPage = useSelector(selectProductsPage);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts({ perPage: 12, page: currentPage }));
     dispatch(fetchCategories());
-  }, [dispatch]);
+  }, [dispatch, currentPage]);
 
   return (
     <div className={css.wrapper}>
@@ -27,7 +31,7 @@ const MedicinePage = () => {
         <>
           <Filters />
           <MedicineList />
-          {/* <PaginationComponent /> */}
+          <PaginationComponent />
         </>
       )}
     </div>

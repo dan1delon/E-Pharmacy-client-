@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectNearestStores,
+  selectPage,
   selectStores,
 } from '../../../redux/stores/selectors';
 import {
@@ -18,6 +19,7 @@ const MedicineStores = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
+  const currentPage = useSelector(selectPage);
 
   const nearestStores = useSelector(selectNearestStores);
   const allStores = useSelector(selectStores);
@@ -26,11 +28,11 @@ const MedicineStores = () => {
 
   useEffect(() => {
     if (isMedicineStorePage) {
-      dispatch(fetchStores({ perPage: 9 }));
+      dispatch(fetchStores({ perPage: 9, page: currentPage }));
     } else {
       dispatch(fetchNearestStores());
     }
-  }, [dispatch, isMedicineStorePage]);
+  }, [dispatch, isMedicineStorePage, currentPage]);
 
   const handleShopClick = () => {
     navigate('/medicine');
@@ -81,7 +83,7 @@ const MedicineStores = () => {
           </li>
         ))}
       </ul>
-      {/* {isMedicineStorePage && <PaginationComponent />} */}
+      {isMedicineStorePage && <PaginationComponent />}
     </div>
   );
 };
