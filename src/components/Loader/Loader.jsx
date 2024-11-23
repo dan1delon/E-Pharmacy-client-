@@ -6,8 +6,8 @@ const Loader = () => {
     <div className={css.background}>
       <MutatingDots
         visible={true}
-        height="120"
-        width="120"
+        height="150"
+        width="150"
         color="#4fa94d"
         secondaryColor="#4fa94d"
         radius="12.5"
