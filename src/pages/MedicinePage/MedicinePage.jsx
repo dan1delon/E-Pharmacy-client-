@@ -22,6 +22,7 @@ const MedicinePage = () => {
   useEffect(() => {
     dispatch(fetchProducts({ perPage: 12, page: currentPage }));
     dispatch(fetchCategories());
+    window.scrollTo(0, 0);
   }, [dispatch, currentPage]);
 
   return (
