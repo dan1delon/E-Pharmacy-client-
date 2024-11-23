@@ -30,8 +30,6 @@ const PaginationComponent = () => {
     } else if (location.pathname === '/medicine') {
       dispatch(changeProductsPage(value));
     }
-    window.scrollTo(0, 0);
-    console.log(window.scrollY);
   };
 
   return (
