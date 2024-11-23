@@ -9,6 +9,7 @@ import { selectCart } from '../../../redux/cart/selectors';
 import { useNavigate } from 'react-router-dom';
 import { checkoutCart } from '../../../redux/cart/operations';
 import { useDispatch } from 'react-redux';
+import { useScrollContext } from '../../../context/ScrollContext';
 
 const CartForm = () => {
   const [paymentType, setPaymentType] = useState('cash');
@@ -21,6 +22,13 @@ const CartForm = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { headerRef } = useScrollContext();
+
+  const scrollToHeader = () => {
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const {
     register,
@@ -54,6 +62,7 @@ const CartForm = () => {
 
     reset();
     navigate('/home');
+    scrollToHeader();
   };
 
   const handlePaymentRadioChange = e => {
