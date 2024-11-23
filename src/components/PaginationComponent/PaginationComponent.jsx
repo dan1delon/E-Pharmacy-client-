@@ -10,6 +10,7 @@ import {
 } from '../../redux/products/selectors';
 import { changePage } from '../../redux/stores/slice';
 import { changeProductsPage } from '../../redux/products/slice';
+import { useScrollContext } from '../../context/ScrollContext';
 
 const PaginationComponent = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,13 @@ const PaginationComponent = () => {
   const pageCount = useSelector(selectTotalPages) || 1;
   const pageProductsCount = useSelector(selectProductsTotalPages) || 1;
   const location = useLocation();
+  const { headerRef } = useScrollContext();
+
+  const scrollToHeader = () => {
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   if (location.pathname === '/medicine-store') {
     currentPage = useSelector(selectPage) || 1;
@@ -25,6 +33,7 @@ const PaginationComponent = () => {
   }
 
   const handleChange = (event, value) => {
+    scrollToHeader();
     if (location.pathname === '/medicine-store') {
       dispatch(changePage(value));
     } else if (location.pathname === '/medicine') {
