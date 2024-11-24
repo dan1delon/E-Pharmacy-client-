@@ -10,7 +10,7 @@ const Loader = () => {
         width="120"
         color="#4fa94d"
         secondaryColor="#4fa94d"
-        radius="10"
+        radius="0"
         ariaLabel="mutating-dots-loading"
         wrapperStyle={{}}
         wrapperClass={css.wrapper}
