@@ -3,7 +3,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 export const instance = axios.create({
-  baseURL: 'https://e-pharmacy-backend-production.up.railway.app',
+  baseURL: 'https://epharmacy-349383307514.europe-central2.run.app',
   withCredentials: true,
 });
 
