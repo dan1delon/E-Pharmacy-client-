@@ -29,8 +29,8 @@ const MedicinePage = () => {
   };
 
   useEffect(() => {
-    changeProductsPage(1);
-  }, []);
+    dispatch(changeProductsPage(1));
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(fetchProducts({ perPage: 12, page: currentPage }));
