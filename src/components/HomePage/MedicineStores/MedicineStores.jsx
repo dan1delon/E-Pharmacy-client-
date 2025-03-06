@@ -15,6 +15,7 @@ import {
 } from '../../../redux/stores/operations';
 import PaginationComponent from '../../PaginationComponent/PaginationComponent';
 import { useScrollContext } from '../../../context/ScrollContext';
+import { changePage } from '../../../redux/stores/slice';
 
 const MedicineStores = () => {
   const navigate = useNavigate();
