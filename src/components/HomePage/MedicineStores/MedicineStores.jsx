@@ -36,6 +36,10 @@ const MedicineStores = () => {
   const isMedicineStorePage = location.pathname === '/medicine-store';
 
   useEffect(() => {
+    dispatch(changePage(1));
+  }, [location.pathname]);
+
+  useEffect(() => {
     if (isMedicineStorePage) {
       dispatch(fetchStores({ perPage: 9, page: currentPage }));
       scrollToHeader();

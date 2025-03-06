@@ -11,6 +11,7 @@ import {
 import { changePage } from '../../redux/stores/slice';
 import { changeProductsPage } from '../../redux/products/slice';
 import { useScrollContext } from '../../context/ScrollContext';
+import { useEffect } from 'react';
 
 const PaginationComponent = () => {
   const dispatch = useDispatch();

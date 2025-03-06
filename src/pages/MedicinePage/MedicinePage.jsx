@@ -14,6 +14,7 @@ import {
 import Loader from '../../components/Loader/Loader';
 import PaginationComponent from '../../components/PaginationComponent/PaginationComponent';
 import { useScrollContext } from '../../context/ScrollContext';
+import { useLocation } from 'react-router-dom';
 import { changeProductsPage } from '../../redux/products/slice';
 
 const MedicinePage = () => {
@@ -21,6 +22,7 @@ const MedicinePage = () => {
   const isLoading = useSelector(selectIsLoading);
   const currentPage = useSelector(selectProductsPage);
   const { headerRef } = useScrollContext();
+  const location = useLocation();
 
   const scrollToHeader = () => {
     if (headerRef.current) {
@@ -30,7 +32,7 @@ const MedicinePage = () => {
 
   useEffect(() => {
     dispatch(changeProductsPage(1));
-  }, [dispatch]);
+  }, [location.pathname]);
 
   useEffect(() => {
     dispatch(fetchProducts({ perPage: 12, page: currentPage }));
