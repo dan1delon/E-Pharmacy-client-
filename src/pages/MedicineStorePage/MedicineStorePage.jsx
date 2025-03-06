@@ -3,9 +3,14 @@ import MedicineStores from '../../components/HomePage/MedicineStores/MedicineSto
 import { selectIsLoading } from '../../redux/stores/selectors';
 import Loader from '../../components/Loader/Loader';
 import { useSelector } from 'react-redux';
+import { changePage } from '../../redux/stores/slice';
 
 const MedicineStorePage = () => {
   const isLoading = useSelector(selectIsLoading);
+
+  useEffect(() => {
+    changePage(1);
+  }, []);
 
   return (
     <div className={css.wrapper}>

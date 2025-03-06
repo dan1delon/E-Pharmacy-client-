@@ -14,6 +14,7 @@ import {
 import Loader from '../../components/Loader/Loader';
 import PaginationComponent from '../../components/PaginationComponent/PaginationComponent';
 import { useScrollContext } from '../../context/ScrollContext';
+import { changeProductsPage } from '../../redux/products/slice';
 
 const MedicinePage = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,10 @@ const MedicinePage = () => {
       headerRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    changeProductsPage(1);
+  }, []);
 
   useEffect(() => {
     dispatch(fetchProducts({ perPage: 12, page: currentPage }));
