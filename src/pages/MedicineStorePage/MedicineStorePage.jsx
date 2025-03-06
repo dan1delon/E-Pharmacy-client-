@@ -4,6 +4,7 @@ import { selectIsLoading } from '../../redux/stores/selectors';
 import Loader from '../../components/Loader/Loader';
 import { useSelector } from 'react-redux';
 import { changePage } from '../../redux/stores/slice';
+import { useEffect } from 'react';
 
 const MedicineStorePage = () => {
   const isLoading = useSelector(selectIsLoading);
