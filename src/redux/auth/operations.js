@@ -61,7 +61,6 @@ export const refreshUserAPI = createAsyncThunk(
       if (e.response && e.response.status === 401) {
         return thunkApi.rejectWithValue('Unauthorized');
       }
-      toast.error(e.message);
       return thunkApi.rejectWithValue(e.message);
     }
   }
